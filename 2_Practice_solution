@@ -36,6 +36,13 @@ smokers1 %>%
 # Q8. 성별 BMI를 상자그림으로 그려라.
 boxplot(bmi~Gender, data=smokers1)
 
+library(ggplot2)
+library(plotly)
+ggplot(data=smokers1, aes(x=Gender, y=bmi, fill=Gender))+
+  geom_boxplot() -> p
+ggplotly(p)
+# 대화형 그림
+
 # Q9. 흡연 및 비흡연자의 BMI의 평균과 표준편차를 구하라.
 # Q10. 흡연 및 비흡연자의 BMI를 상자그림으로 그려라.
 # Gender를 Smoker로 수정
